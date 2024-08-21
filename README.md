@@ -1,2 +1,1 @@
-# EM2030Project
-this is my learning project
+# EmbeddedTraining-ArmelKamdem-12072024

@@ -1,0 +1,13 @@
+{
+  "files.autoGuessEncoding" : true,
+    "cmake.configureOnOpen"  : true,
+    "cmake.buildDirectory"   : "${workspaceFolder}/build/${variant:TARGET_SYSTEM}",
+    "cmake.generator"        : "Ninja",
+     "cmake.cmakePath": "C:/Program Files/CMake/bin/cmake",
+     "cmake.configureSettings": {
+       "CMAKE_MAKE_PROGRAM":"C:/Ninja/ninja"
+     },
+    "cmake.preferredGenerators": [
+      "Ninja",
+      ],
+}
