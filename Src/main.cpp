@@ -44,9 +44,7 @@ void     SystemClock_Config(void);
 
 int main(void)
 {
-  Pin pin0(0,'B') ;
-  pin0.output();
-  pin0.change();
+ 
 
 
   /* Configure the system clock to 100 MHz */
@@ -58,6 +56,9 @@ int main(void)
   /* Infinite loop */
   while (1)
   {
+    Pin pin0(12,'D') ;
+    pin0.output();
+    pin0.change();
 
   }
 }
