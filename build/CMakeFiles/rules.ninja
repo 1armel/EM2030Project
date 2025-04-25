@@ -45,7 +45,7 @@ rule CXX_COMPILER__PROJECT_V001.2eelf_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__PROJECT_V001.2eelf_Debug
-  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\PROGRA~2\GNUARM~1\102021~1.10\bin\AR10B2~1.EXE $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\PROGRA~2\GNUARM~1\102021~1.10\bin\AR10B2~1.EXE $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
