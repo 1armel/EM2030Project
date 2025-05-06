@@ -9,7 +9,7 @@
             "name": "Debug",
             "request": "launch",
             "type": "cortex-debug",
-            "gdbPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gdb.exe",
+            "gdbPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/bin/arm-none-eabi-gdb.exe",
             "servertype": "stlink",
             "serverpath": "${env:TOOLCHAIN_ST_LINK}/ST-LINK_gdbserver.exe",
             "device": "STM32F429ZI"
