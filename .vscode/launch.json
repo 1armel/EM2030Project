@@ -4,15 +4,34 @@
     "configurations": [
         {
             "cwd": "${workspaceRoot}",
-            "executable": "build/${env:NAME_PROJECT}.elf",
+            "executable": "${workspaceRoot}/build/PROJECT_V001.elf",
             "showDevDebugOutput": "raw",
             "name": "Debug",
             "request": "launch",
             "type": "cortex-debug",
             "gdbPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/bin/arm-none-eabi-gdb.exe",
             "servertype": "stlink",
-            "serverpath": "${env:TOOLCHAIN_ST_LINK}/ST-LINK_gdbserver.exe",
-            "device": "STM32F429ZI"
+            "serverpath": "C:/stlink-gdb-server/bin/ST-LINK_gdbserver.exe",
+            "runToEntryPoint": "main",
+            "device": "STM32F429ZI",
+            "swoConfig": {
+                "enabled": false,
+                "decoders": [],
+                "cpuFrequency": 0,
+                "swoFrequency": 0,
+                "source": "probe"
+            },
+            "rttConfig": {
+                "enabled": false,
+                "decoders": []
+            },
+            "graphConfig": [],
+            "preLaunchCommands": [],
+            "postLaunchCommands": [],
+            "preRestartCommands": [],
+            "postRestartCommands": [],
+            "preResetCommands": [],
+            "postResetCommands": []
         }
     ]
 }
