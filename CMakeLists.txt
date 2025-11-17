@@ -8,7 +8,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/CMakeTools/arm-none-eabi-gcc.cmake)
 
 # Specify the linker file path
-set(LINKER_FILE "C:/STM32F429/Driver/STM32F429/Linker/STM32F429ZITx_FLASH.ld")
+set(LINKER_FILE "${CMAKE_SOURCE_DIR}/Driver/STM32F429/Linker/STM32F429ZITx_FLASH.ld")
 
 # Setup project, output, and linker file
 # Replace the environment variable usage with a fallback option
