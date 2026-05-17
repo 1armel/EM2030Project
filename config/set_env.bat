@@ -39,7 +39,7 @@ rem compiler
 rem -----------------------------------------------------------------------------------------------
 
 rem ARM GCC
-set ARM_TOOLCHAIN_PATH=C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bino
+set ARM_TOOLCHAIN_PATH=C:/Program Files (x86)/GNU Arm Embedded Toolchain/bin
 
 rem -----------------------------------------------------------------------------------------------
 rem Debug Tools

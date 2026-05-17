@@ -44,7 +44,7 @@ void     SystemClock_Config(void);
 
 int main(void)
 {
-  Pin pin0(0,'B') ;
+  Pin pin0(7,'B') ;
   pin0.output();
   pin0.change();
 

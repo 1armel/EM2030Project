@@ -1,29 +1,29 @@
 {
   "NAME_PROJECT": {
-     "default": "PROJECT_V001",
-     "choices": {    
-       "PROJECT_V001": {    
-         "short": "PROJECT_V001",
-         "long": "PROJECT_V001",
-         "settings": {    
-           "NAME_PROJECT": "PROJECT_V001"
-         }
-       }
-     }
-   },
-   "buildType": {    
-     "default": "Debug",
-     "choices": {    
-       "Release": {    
-         "short": "Release",
-         "long": "Release",
-         "buildType": "Release"
-       },
-       "Debug": {    
-         "short": "Debug",
-         "long": "Debug",
-         "buildType": "Debug"
-       }
-     }
-   }
- }
+    "default": "PROJECT_V001",
+    "choices": {
+      "PROJECT_V001": {
+        "short": "PROJECT_V001",
+        "long": "PROJECT_V001",
+        "settings": {
+          "NAME_PROJECT": "PROJECT_V001"
+        }
+      }
+    }
+  },
+  "buildType": {
+    "default": "Debug",
+    "choices": {
+      "Release": {
+        "short": "Release",
+        "long": "Release",
+        "buildType": "Release"
+      },
+      "Debug": {
+        "short": "Debug",
+        "long": "Debug",
+        "buildType": "Debug"
+      }
+    }
+  }
+}
