@@ -6,15 +6,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(ENABLE_COVERAGE "Instrument tests for gcov/lcov coverage reports" OFF)
 
-if(ENABLE_COVERAGE)
-    if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-        add_compile_options(--coverage -O0 -g)
-        add_link_options(--coverage)
-    else()
-        message(WARNING "ENABLE_COVERAGE is not supported for ${CMAKE_CXX_COMPILER_ID}")
-    endif()
-endif()
-
 include(FetchContent)
 FetchContent_Declare(
     googletest
@@ -41,6 +32,18 @@ target_include_directories(pin_tests PRIVATE
 target_compile_definitions(pin_tests PRIVATE HOST_UNIT_TEST)
 
 target_link_libraries(pin_tests PRIVATE GTest::gtest GTest::gtest_main)
+
+if(ENABLE_COVERAGE)
+    if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+        set_source_files_properties(
+            ${CMAKE_SOURCE_DIR}/../Driver/STM32F429/Src/Pin.cpp
+            PROPERTIES COMPILE_OPTIONS "--coverage;-O0;-g"
+        )
+        target_link_options(pin_tests PRIVATE --coverage)
+    else()
+        message(WARNING "ENABLE_COVERAGE is not supported for ${CMAKE_CXX_COMPILER_ID}")
+    endif()
+endif()
 
 include(GoogleTest)
 gtest_discover_tests(pin_tests)

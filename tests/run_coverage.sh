@@ -11,13 +11,14 @@ cmake --build "${BUILD}"
 ctest --test-dir "${BUILD}" --output-on-failure
 
 INFO="${BUILD}/coverage.info"
-lcov --capture --directory "${BUILD}" --output-file "${INFO}" --rc lcov_branch_coverage=1
+lcov --capture --directory "${BUILD}" --output-file "${INFO}" \
+    --rc branch_coverage=1 --ignore-errors mismatch,negative
 lcov --remove "${INFO}" \
     '*/tests/*' \
     '*/_deps/*' \
     '*/build-tests/*' \
     '/usr/*' \
-    --output-file "${INFO}"
+    --output-file "${INFO}" --ignore-errors unused,negative
 
 echo ""
 echo "Coverage report: ${INFO}"
