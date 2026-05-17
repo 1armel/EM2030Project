@@ -20,12 +20,20 @@ arm-none-eabi-gdb --version
 
 **Error**: `Error: unable to open stlink device` or permission denied
 
-**Solution**: Add your user to the `uucp` group (for Arch/Manjaro):
+**Solution**: Add your user to the `plugdev` group (Arch/Manjaro `stlink` udev rules):
 ```bash
-sudo usermod -a -G uucp $USER
+sudo usermod -aG plugdev $USER
+sudo udevadm control --reload-rules
+sudo udevadm trigger
 ```
 
-Then log out and log back in (or restart) for the changes to take effect.
+Unplug and replug the board, then log out and log back in (or restart).
+
+Verify the device is not owned only by root:
+```bash
+ls -la /dev/bus/usb/*/*
+# After udev applies: group should be plugdev, mode crw-rw----
+```
 
 Verify your ST-Link device is detected:
 ```bash
@@ -50,6 +58,21 @@ st-util
 ```
 
 Press Ctrl+C to stop it.
+
+### 3b. GDB Server Quit Unexpectedly (`unrecognized option '--swd'`)
+
+**Error**: `ST-LINK: GDB Server Quit Unexpectedly` and in the TERMINAL tab:
+`st-util: unrecognized option '--swd'` / `'--halt'`
+
+**Cause**: `launch.json` used `"servertype": "stlink"`, which is for the **Windows**
+STM32CubeProgrammer GDB server. On Linux you must use **`"servertype": "stutil"`**
+with `"serverpath": "st-util"`.
+
+Correct excerpt:
+```json
+"servertype": "stutil",
+"serverpath": "st-util",
+```
 
 ### 4. VS Code Cortex-Debug Extension
 

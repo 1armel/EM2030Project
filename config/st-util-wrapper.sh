@@ -1,9 +1,8 @@
 #!/bin/bash
-# Wrapper script for st-util that filters out Windows-specific -cp flag
-# Cortex-Debug adds -cp flag for STM32CubeProgrammer which doesn't exist on Linux
-# This script removes that flag so st-util works properly
+# Fallback wrapper if launch.json uses servertype "stlink" (Windows GDB server).
+# Prefer servertype "stutil" in launch.json so Cortex-Debug talks to st-util directly.
+# st-util does not accept: -cp, --swd, --halt (those are for STM32CubeProgrammer).
 
-# Filter out -cp and its argument
 FILTERED_ARGS=()
 SKIP_NEXT=false
 
@@ -12,15 +11,14 @@ for arg in "$@"; do
         SKIP_NEXT=false
         continue
     fi
-    
-    if [ "$arg" = "-cp" ]; then
-        SKIP_NEXT=true
-        continue
-    fi
-    
+    case "$arg" in
+        -cp|--swd|--halt)
+            [ "$arg" = "-cp" ] && SKIP_NEXT=true
+            continue
+            ;;
+    esac
     FILTERED_ARGS+=("$arg")
 done
 
-# Call the real st-util with filtered arguments
 exec /usr/bin/st-util "${FILTERED_ARGS[@]}"
 
