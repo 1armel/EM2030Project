@@ -1,5 +1,12 @@
 #pragma once
+
+#include <cstdint>
+
+#ifdef HOST_UNIT_TEST
+#include "main_host.h"
+#else
 #include "main.h"
+#endif
 
 #define gpio_A_en 1<<0  
 #define gpio_B_en 1<<1 

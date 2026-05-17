@@ -1,5 +1,5 @@
 #include "Pin.hpp"
-//47GDR-KB5H2-JML9J-S1SFD-MMFGX-TXRF4
+
 Pin::Pin(uint16_t num, uint8_t port, PULL_PIN type_pull):num_(num), port_(port)
 {
 	PORT = GPIO(port_);
@@ -80,7 +80,7 @@ GPIO_TypeDef * Pin::GPIO(uint8_t u8Port){
 				return GPIOG;
 		
 		case 'H':
-				RCC->AHB1ENR |= gpio_G_en;
+				RCC->AHB1ENR |= gpio_H_en;
 				return GPIOH;
 		
 		default:
