@@ -4,6 +4,17 @@ project(em2030_pin_tests LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+option(ENABLE_COVERAGE "Instrument tests for gcov/lcov coverage reports" OFF)
+
+if(ENABLE_COVERAGE)
+    if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+        add_compile_options(--coverage -O0 -g)
+        add_link_options(--coverage)
+    else()
+        message(WARNING "ENABLE_COVERAGE is not supported for ${CMAKE_CXX_COMPILER_ID}")
+    endif()
+endif()
+
 include(FetchContent)
 FetchContent_Declare(
     googletest

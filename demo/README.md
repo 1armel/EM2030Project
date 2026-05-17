@@ -9,6 +9,7 @@ This branch is a **freelancing showcase**: a trimmed, professional slice of the 
 | **Bare-metal C++** | `Pin` class wrapping STM32 GPIO registers (LL-style, no HAL) |
 | **Cross-compilation** | CMake + `arm-none-eabi-gcc`, Ninja, linker script |
 | **Test-driven quality** | 7 GoogleTest unit tests on host with hardware mocks |
+| **Coverage** | [Codecov](https://codecov.io/gh/1armel/EM2030Project) — `lcov` on `Pin.cpp` in CI |
 | **CI/CD** | GitHub Actions: host tests + firmware build on every push |
 | **Developer experience** | VS Code/Cursor (CMake Tools, Cortex-Debug), Linux setup docs |
 
@@ -29,6 +30,20 @@ cmake -S tests -B build-tests -G Ninja
 cmake --build build-tests
 ctest --test-dir build-tests --output-on-failure
 ```
+
+## Coverage (local)
+
+```bash
+bash tests/run_coverage.sh
+```
+
+## Codecov setup (one-time, for CI badge)
+
+1. Sign in at [codecov.io](https://codecov.io) with GitHub.
+2. Add repository **1armel/EM2030Project**.
+3. Copy the repository upload token.
+4. In GitHub: **Settings → Secrets → Actions → New secret** → name `CODECOV_TOKEN`, paste token.
+5. Push to `demo/portfolio-showcase` — CI uploads `build-tests/coverage.info` automatically.
 
 ## Build firmware locally
 

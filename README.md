@@ -1,6 +1,7 @@
 # EM2030 — STM32F429 embedded training & GPIO library
 
 [![CI](https://github.com/1armel/EM2030Project/actions/workflows/ci.yml/badge.svg)](https://github.com/1armel/EM2030Project/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/1armel/EM2030Project/branch/demo/portfolio-showcase/graph/badge.svg)](https://codecov.io/gh/1armel/EM2030Project)
 
 Bare-metal firmware for **STM32F429ZI** (Cortex-M4), built with **CMake**, **Ninja**, and a small **C++ GPIO `Pin` class** over register access (STM32 LL headers).
 
@@ -10,7 +11,7 @@ Bare-metal firmware for **STM32F429ZI** (Cortex-M4), built with **CMake**, **Nin
 
 - Cross-compile with `arm-none-eabi-gcc` and `CMakeTools/arm-none-eabi-gcc.cmake`
 - Host-side **GoogleTest** suite for `Pin` (register mocks, no hardware)
-- **GitHub Actions**: host tests + firmware cross-build
+- **GitHub Actions**: host tests + firmware cross-build + **Codecov** coverage
 - Cursor/VS Code: CMake Tools, Cortex-Debug (`servertype: stutil`)
 
 ## Quick start
@@ -21,6 +22,13 @@ Bare-metal firmware for **STM32F429ZI** (Cortex-M4), built with **CMake**, **Nin
 cmake -S tests -B build-tests -G Ninja
 cmake --build build-tests
 ctest --test-dir build-tests --output-on-failure
+```
+
+### Coverage report (local)
+
+```bash
+bash tests/run_coverage.sh
+# Optional HTML: genhtml build-tests/coverage.info -o build-tests/coverage-html
 ```
 
 ### Firmware
