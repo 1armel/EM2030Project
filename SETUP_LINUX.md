@@ -1,5 +1,9 @@
 # Linux Setup Guide for EM2030Project
 
+This project’s **main goal** is a working **VS Code / Cursor + CMake + Cortex-Debug** flow for **STM32F429ZI**. For the full IDE walkthrough (extensions, `.vscode/`, kits, launch, workflow), see **[docs/VSCODE_CMAKE_DEBUG.md](docs/VSCODE_CMAKE_DEBUG.md)**.
+
+Below: host tool installation (Arch/Manjaro).
+
 ## Prerequisites Installation
 
 ### 1. Install ARM GCC Embedded Toolchain

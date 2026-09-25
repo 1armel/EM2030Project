@@ -5,8 +5,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/1armel/EM2030Project/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/1armel/EM2030Project/ci.yml?branch=demo%2Fportfolio-showcase&label=CI&logo=githubactions&logoColor=white" alt="CI"/></a>
-  <a href="https://codecov.io/gh/1armel/EM2030Project"><img src="https://img.shields.io/codecov/c/github/1armel/EM2030Project?logo=codecov&logoColor=white" alt="Codecov"/></a>
+  <a href="https://github.com/YOUR_GITHUB_ORG/emb-stm32f429-vscode-debug/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/YOUR_GITHUB_ORG/emb-stm32f429-vscode-debug/ci.yml?branch=main&label=CI&logo=githubactions&logoColor=white" alt="CI"/></a>
+  <a href="https://codecov.io/gh/YOUR_GITHUB_ORG/emb-stm32f429-vscode-debug"><img src="https://img.shields.io/codecov/c/github/YOUR_GITHUB_ORG/emb-stm32f429-vscode-debug?logo=codecov&logoColor=white" alt="Codecov"/></a>
   <img src="https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white" alt="C++17"/>
   <img src="https://img.shields.io/badge/CMake-3.15%2B-064F8C?logo=cmake&logoColor=white" alt="CMake"/>
   <img src="https://img.shields.io/badge/Ninja-build-black?logo=ninja&logoColor=white" alt="Ninja"/>
@@ -81,8 +81,8 @@ Log out and back in, then reconnect the board. Confirm with `st-util` (you shoul
 ### 1. Open the project
 
 ```bash
-git clone https://github.com/1armel/EM2030Project.git
-cd EM2030Project
+git clone https://github.com/YOUR_GITHUB_ORG/emb-stm32f429-vscode-debug.git
+cd emb-stm32f429-vscode-debug
 code .   # or: cursor .
 ```
 

@@ -1,59 +1,31 @@
-# Portfolio demo — EM2030 embedded GPIO layer
+# Portfolio demo — VS Code + CMake + debug on STM32F429ZI
 
-This branch is a **freelancing showcase**: a trimmed, professional slice of the full STM32F429 training project.
+This branch is the **public showcase** slice of the EM2030 training project.
 
-## What it demonstrates
+## Main message
 
-| Skill | Evidence in this repo |
-|-------|------------------------|
-| **Bare-metal C++** | `Pin` class wrapping STM32 GPIO registers (LL-style, no HAL) |
-| **Cross-compilation** | CMake + `arm-none-eabi-gcc`, Ninja, linker script |
-| **Test-driven quality** | 7 GoogleTest unit tests on host with hardware mocks |
-| **Coverage** | [Codecov](https://codecov.io/gh/1armel/EM2030Project) — `lcov` on `Pin.cpp` in CI |
-| **CI/CD** | GitHub Actions: host tests + firmware build on every push |
-| **Developer experience** | VS Code/Cursor (CMake Tools, Cortex-Debug), Linux setup docs |
+**How to configure VS Code / Cursor with CMake to build and debug the STM32F429ZI** (Linux, ST-Link, Cortex-Debug) — with a minimal firmware sample and CI to prove it works.
 
-## Repository layout (demo focus)
+Read the full guide: **[docs/VSCODE_CMAKE_DEBUG.md](../docs/VSCODE_CMAKE_DEBUG.md)**
 
-```
-Driver/STM32F429/Inc/Pin.hpp    # GPIO abstraction API
-Driver/STM32F429/Src/Pin.cpp    # Register-level implementation
-tests/                          # Host unit tests (no board required)
-.github/workflows/ci.yml        # Automated CI
-Src/main.cpp                    # Minimal firmware entry (LED on PB7)
-```
+## What reviewers should look at first
 
-## Run unit tests locally
+| Priority | Path | Content |
+|----------|------|---------|
+| 1 | `.vscode/` | CMake Tools + Cortex-Debug (`stutil`) |
+| 2 | `docs/VSCODE_CMAKE_DEBUG.md` | Step-by-step IDE setup |
+| 3 | `CMakeTools/` | ARM GCC toolchain + board CMake |
+| 4 | `SETUP_LINUX.md` / `DEBUG_TROUBLESHOOTING.md` | Host install & fixes |
+| 5 | `tests/` | Host unit tests (bonus quality signal) |
 
-```bash
-cmake -S tests -B build-tests -G Ninja
-cmake --build build-tests
-ctest --test-dir build-tests --output-on-failure
-```
+## Also demonstrates
 
-## Coverage (local)
+- Bare-metal **C++** `Pin` GPIO helper
+- **GitHub Actions** (tests + cross-build)
+- **Codecov** on driver code
 
-```bash
-bash tests/run_coverage.sh
-```
+## Publish as standalone repo
 
-## Codecov setup (one-time, for CI badge)
+See **[NEW_REPO_GUIDE.md](NEW_REPO_GUIDE.md)** — recommended name: **`emb-stm32f429-vscode-debug`**.
 
-1. Sign in at [codecov.io](https://codecov.io) with GitHub.
-2. Add repository **1armel/EM2030Project**.
-3. Copy the repository upload token.
-4. In GitHub: **Settings → Secrets → Actions → New secret** → name `CODECOV_TOKEN`, paste token.
-5. Push to `demo/portfolio-showcase` — CI uploads `build-tests/coverage.info` automatically.
-
-## Build firmware locally
-
-```bash
-bash build.sh
-# Output: build/PROJECT_V001.elf (+ .hex / .bin)
-```
-
-Requires: `arm-none-eabi-gcc`, `cmake`, `ninja` (see `SETUP_LINUX.md`).
-
-## Full project
-
-The complete training tree (debug setup, board bring-up, clock config) lives on other branches (`main`, `For_zitbase`, etc.). This branch highlights **reusable embedded C++ and automated quality gates** for portfolio reviewers.
+Use **[README.PORTFOLIO.md](README.PORTFOLIO.md)** as the root `README.md` in the new repository.

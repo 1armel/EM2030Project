@@ -1,0 +1,102 @@
+PROPRIETARY SOFTWARE LICENSE
+Copyright (c) 2024–2026 Armel Kamdem. All Rights Reserved.
+
+================================================================================
+IMPORTANT — THIS IS NOT AN OPEN-SOURCE LICENSE
+================================================================================
+
+This repository and all original works contained herein (the "Software"),
+including without limitation source code, build scripts, configuration files,
+documentation, tests, and any associated materials authored by Armel Kamdem,
+are the exclusive proprietary property of Armel Kamdem (the "Owner").
+
+NO LICENSE IS GRANTED TO YOU EXCEPT AS EXPRESSLY STATED BELOW.
+
+--------------------------------------------------------------------------------
+1. LIMITED PERMISSION TO VIEW
+--------------------------------------------------------------------------------
+
+You may view the Software solely for personal, non-commercial evaluation of
+the Owner’s technical work (for example, portfolio review by a prospective
+client or employer).
+
+This limited permission does NOT include any right to:
+
+  (a) use the Software for any purpose other than viewing;
+  (b) copy, download for reuse, fork, clone for development, or mirror;
+  (c) modify, adapt, translate, or create derivative works;
+  (d) distribute, publish, sublicense, sell, rent, lease, or loan;
+  (e) use the Software in any product, service, training material, blog,
+      tutorial, course, or commercial offering;
+  (f) remove or alter any copyright, proprietary, or restrictive notices;
+  (g) reverse engineer beyond what is strictly necessary for the limited
+      viewing right above.
+
+--------------------------------------------------------------------------------
+2. STRICT PROHIBITION ON USE
+--------------------------------------------------------------------------------
+
+EXCEPT for the limited viewing permission in Section 1, YOU MAY NOT USE,
+COPY, MODIFY, MERGE, PUBLISH, DISTRIBUTE, SUBLICENSE, SELL, OR OTHERWISE
+EXPLOIT THE SOFTWARE IN WHOLE OR IN PART, IN SOURCE OR BINARY FORM,
+WITHOUT PRIOR WRITTEN PERMISSION FROM THE OWNER.
+
+Any unauthorized use constitutes copyright infringement and a material
+breach of this License.
+
+--------------------------------------------------------------------------------
+3. NO IMPLIED RIGHTS
+--------------------------------------------------------------------------------
+
+No rights or licenses are granted by implication, estoppel, or otherwise.
+All rights not expressly granted herein are reserved exclusively by the Owner.
+
+--------------------------------------------------------------------------------
+4. THIRD-PARTY COMPONENTS
+--------------------------------------------------------------------------------
+
+Files originating from STMicroelectronics, ARM (CMSIS), or other third
+parties remain subject to their respective licenses and copyrights. This
+License does not relicense those third-party materials. Your obligations
+under those licenses remain unchanged. The proprietary restrictions in
+this License apply to all original works of the Owner.
+
+--------------------------------------------------------------------------------
+5. NO WARRANTY
+--------------------------------------------------------------------------------
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. THE OWNER SHALL
+NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE
+SOFTWARE OR THIS LICENSE.
+
+--------------------------------------------------------------------------------
+6. TERMINATION
+--------------------------------------------------------------------------------
+
+This License terminates automatically upon any breach. Upon termination,
+you must destroy all copies of the Software in your possession or control.
+Sections 2, 3, 5, 7, and 8 survive termination.
+
+--------------------------------------------------------------------------------
+7. GOVERNING LAW
+--------------------------------------------------------------------------------
+
+This License shall be governed by the laws of the jurisdiction of the Owner’s
+residence, without regard to conflict-of-law principles. Exclusive venue for
+disputes shall be the competent courts of that jurisdiction, unless otherwise
+required by mandatory law.
+
+--------------------------------------------------------------------------------
+8. CONTACT / COMMERCIAL LICENSE
+--------------------------------------------------------------------------------
+
+To request a commercial or other written license to use, modify, or
+distribute the Software, contact:
+
+  Armel Kamdem
+  (via the contact methods published on the Owner’s GitHub profile)
+
+Until such written permission is granted, NO USE IS AUTHORIZED beyond
+Section 1.
